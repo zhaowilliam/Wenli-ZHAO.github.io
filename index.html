@@ -76,6 +76,8 @@
     }
   </style>
   
+
+  
 </head>
 
 
@@ -102,6 +104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="page-link" href="#bio"><b>Biography</b></a>
     <a class="page-link" href="#timeline"><b>Experiences</b></a>
     <a class="page-link" href="#publications"><b>Publications</b></a>
+    <a class="page-link" href="#codebase"><b>GitHub</b></a>
     <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
     <a class="page-link" href="#academicservices"><b>Academic Services </b></a>
     <!--<a class="page-link" href="#otherprojects">Projects</a>-->
@@ -303,7 +306,7 @@ I'm always looking for related colaboration. If you are interested to chat with 
           Algorithm Expert @ <a href="https://damo.alibaba.com/?language=zh" target="_blank">DAMO Academy, Alibaba</a>
         </div>
         <div class="timeline-desc">
-          Embodied AI, Multi-modality LLM<br>
+          <b> Join as <a href="https://talent.alibaba.com/activity/ali-star?lang=zh" target="_blank">AliStar</a>, focus on Embodied AI and VLA models. </b>
           <div class="timeline-host">
             <!-- Supervisor: <a href="https://prokia.github.io/">Shuangjia Zheng</a> -->
           </div>
@@ -360,11 +363,11 @@ I'm always looking for related colaboration. If you are interested to chat with 
   
         <div class="timeline-item">
           <div class="timeline-date">
-            <img class="social-icon" src="images/damo_logo_2.avif"/>
+            <img class="social-icon" src="images/tongyi.png"/>
             Mar, 2022 - Mar, 2023
           </div>
           <div class="timeline-title">
-            Research Intern @ <a href="https://damo.alibaba.com/?language=zh" target="_blank">DAMO Academy, Alibaba</a>
+            Research Intern @ <a href="https://tongyi.aliyun.com/welcome" target="_blank">Tongyi Lab, Alibaba</a>
           </div>
           <div class="timeline-desc">
             <div class="timeline-host">
@@ -1024,6 +1027,473 @@ I'm always looking for related colaboration. If you are interested to chat with 
   });
 </script>
 
+<script>
+  const repos = [
+    { owner: "alibaba-damo-academy", repo: "WorldVLA", starId: "star-count", forkId: "fork-count" },
+    { owner: "GAI4Manipulation", repo: "AwesomeGAIManipulation", starId: "star-count-2", forkId: "fork-count-2" },
+    { owner: "Jun-CEN", repo: "CMDFusion", starId: "star-count-3", forkId: "fork-count-3" },
+    { owner: "Jun-CEN", repo: "SegmentAnyRGBD", starId: "star-count-4", forkId: "fork-count-4" },
+    { owner: "Jun-CEN", repo: "PSL", starId: "star-count-5", forkId: "fork-count-5" },
+    { owner: "Jun-CEN", repo: "Unified-Open-Set-Recognition", starId: "star-count-6", forkId: "fork-count-6" },
+    { owner: "Jun-CEN", repo: "Open-world-3D-semantic-segmentation", starId: "star-count-7", forkId: "fork-count-7" },
+    { owner: "Jun-CEN", repo: "Open-World-Semantic-Segmentation", starId: "star-count-8", forkId: "fork-count-8" },
+    { owner: "Jingkang50", repo: "PSG4D", starId: "star-count-9", forkId: "fork-count-9" },
+    { owner: "youquanl", repo: "Segment-Any-Point-Cloud", starId: "star-count-10", forkId: "fork-count-10" }
+  ];
+
+  async function loadGitHubStats() {
+    for (const { owner, repo, starId, forkId } of repos) {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+        if (!res.ok) throw new Error("GitHub API error");
+        const data = await res.json();
+        document.getElementById(starId).innerText = data.stargazers_count ?? "–";
+        document.getElementById(forkId).innerText = data.forks_count ?? "–";
+      } catch (e) {
+        console.error(`Failed to load stats for ${owner}/${repo}`, e);
+        document.getElementById(starId).innerText = "–";
+        document.getElementById(forkId).innerText = "–";
+      }
+    }
+  }
+
+  loadGitHubStats();
+</script>
+
+
+<div class="wrapper">
+  <div id="codebase" class="bio">
+    <div class="bio-body" style="overflow:hidden;">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-tasks" aria-hidden="true"></i>
+        GitHub
+      </h1>  
+      <div class="card-container">
+
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/alibaba-damo-academy/WorldVLA" target="_blank">
+              alibaba-damo-academy/<strong>WorldVLA</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            WorldVLA: Towards Autoregressive Action World Model.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/alibaba-damo-academy/WorldVLA/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;  <span id="star-count">–</span>
+            </a>
+            <a href="https://github.com/alibaba-damo-academy/WorldVLA/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp; <span id="fork-count">–</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation" target="_blank">
+              GAI4Manipulation/<strong>AwesomeGAIManipulation</strong>
+            </a>
+            <span class="label">Awesome List</span>
+          </div>
+          <div class="description">
+            Generative Artificial Intelligence in Robotic Manipulation: A Survey.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Markdown</div>
+            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-2">–</span>
+            </a>
+            <a href="https://github.com/GAI4Manipulation/AwesomeGAIManipulation/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-2">–</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/SegmentAnyRGBD" target="_blank">
+              Jun-CEN/<strong>SegmentAnyRGBD</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            SegmentAnyRGBD.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-4">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/SegmentAnyRGBD/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-4">–</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jingkang50/PSG4D" target="_blank">
+              Jingkang50/<strong>PSG4D</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [NeurIPS 2023] 4D Panoptic Scene Graph Generation.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jingkang50/PSG4D/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-9">–</span>
+            </a>
+            <a href="https://github.com/Jingkang50/PSG4D/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-9">–</span>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Card 10 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/youquanl/Segment-Any-Point-Cloud" target="_blank">
+              youquanl/<strong>Segment-Any-Point-Cloud</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [NeurIPS 2023] Segment Any Point Cloud Sequences by Distilling Vision Foundation Models.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-10">–</span>
+            </a>
+            <a href="https://github.com/youquanl/Segment-Any-Point-Cloud/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-10">–</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/CMDFusion" target="_blank">
+              Jun-CEN/<strong>CMDFusion</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [RA-L 2023] CMDFusion: Bidirectional Fusion Network with Cross-modality Knowledge Distillation for LIDAR Semantic Segmentation.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/CMDFusion/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-3">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/CMDFusion/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-3">–</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/PSL" target="_blank">
+              Jun-CEN/<strong>PSL</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [CVPR 2023] Enlarge Instance-specific and Class-specific Information for Open-set Action Recognition.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/PSL/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-5">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/PSL/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-5">–</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition" target="_blank">
+              Jun-CEN/<strong>Unified-Open-Set-Recognition</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [ICLR 2023] The Devil is in the Wrongly-classified Samples: Towards Unified Open-set Recognition.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-6">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/Unified-Open-Set-Recognition/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-6">–</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation" target="_blank">
+              Jun-CEN/<strong>Open-world-3D-semantic-segmentation</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [ECCV 2022] Open-world Semantic Segmentation for LIDAR Point Clouds.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-7">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/Open-world-3D-semantic-segmentation/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-7">–</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="github-card">
+          <div>
+            <a class="repo-link" href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation" target="_blank">
+              Jun-CEN/<strong>Open-World-Semantic-Segmentation</strong>
+            </a>
+            <span class="label">Project</span>
+          </div>
+          <div class="description">
+            [ICCV 2021] Deep Metric Learning for Open World Semantic Segmentation.
+          </div>
+          <div class="meta">
+            <div class="dot"></div>
+            <div>Python</div>
+            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/stargazers" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 
+                14.5L369.8 316.2 115.9 353.1c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 
+                179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 
+                119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 
+                26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 
+                8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+              </svg>
+              Star &nbsp;<span id="star-count-8">–</span>
+            </a>
+            <a href="https://github.com/Jun-CEN/Open-World-Semantic-Segmentation/network/members" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 
+                8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 
+                0V7a1.51 1.51 0 0 0 .82 1.34L8 
+                9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 
+                1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 
+                4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 
+                0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 
+                1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z">
+                </path>
+              </svg>
+              Fork &nbsp;<span id="fork-count-8">–</span>
+            </a>
+          </div>
+        </div>
+
+        
+        </div>
+    </div>
+  </div>
+</div>
+
 <div class="wrapper">
   <div id="awards" class="bio">
     <h1 class="md-heading text-left">
@@ -1040,6 +1510,43 @@ I'm always looking for related colaboration. If you are interested to chat with 
   </div>
 </div>
 
+<style>
+  .reviewer-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .reviewer-column {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding-right: 20px;
+    font-size: 0.85em; /* 字体略微变小 */
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1em;
+    margin-bottom: 4px;
+  }
+
+  .reviewer-column::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+    .reviewer-column {
+      flex: 1 1 100%;
+    }
+  }
+
+  .reviewer-title {
+    margin-top: 12px;
+    font-weight: bold;
+  }
+</style>
+
 <div class="wrapper">
   <div id="academicservices" class="bio">
     <div class="bio-body" style="overflow:hidden;">
@@ -1047,15 +1554,36 @@ I'm always looking for related colaboration. If you are interested to chat with 
         <i class="fa fa-tasks" aria-hidden="true"></i>
         Academic Services
       </h1>  
-      	<b>Reviewer:</b> T-PAMI, IJCV, ICML, ICLR, NeurIPS, CVPR, ICCV, ICRA, IROS, RA-L<br>
-      	<!-- <b>Area Chair:</b> NeurIPS2023 GLFrontier<br>
-	<b>Organizer:</b> LoG2023 Montreal<br> -->
+
+      <div class="reviewer-title">Conference Reviewer:</div>
+      <div class="reviewer-section">
+        <div class="reviewer-column">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+        <div class="reviewer-column">International Conference on Computer Vision (ICCV)</div>
+        <div class="reviewer-column">European Conference on Computer Vision (ECCV)</div>
+        <div class="reviewer-column">Conference on Neural Information Processing Systems (NeurIPS)</div>
+        <div class="reviewer-column">International Conference on Learning Representations (ICLR)</div>
+        <div class="reviewer-column">International Conference on Machine Learning (ICML)</div>
+        <div class="reviewer-column">International Conference on Robotics and Automation (ICRA)</div>
+        <div class="reviewer-column">International Conference on Intelligent Robots and Systems (IROS)</div>
+      </div>
+
+      <div class="reviewer-title">Journal Reviewer:</div>
+      <div class="reviewer-section">
+        <div class="reviewer-column">International Journal of Computer Vision (IJCV)</div>
+        <div class="reviewer-column">Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</div>
+        <div class="reviewer-column">Transactions on Neural Networks and Learning Systems (TNNLS)</div>
+        <div class="reviewer-column">Transactions on Circuits and Systems for Video Technology (TCSVT)</div>
+        <div class="reviewer-column">Transactions on Multimedia (TMM)</div>
+        <div class="reviewer-column">Robotics and Automation Letters (RA-L)</div>
+      </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5mz7hnrbg3y&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
 
+
+
+<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g"></script>
 
 <footer class="site-footer">
   <div class="wrapper">
@@ -1091,7 +1619,7 @@ I'm always looking for related colaboration. If you are interested to chat with 
 	<div class="footer-col footer-col-3">
     	<!--<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwillhua127.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
 	<!-- <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?user=Lxe71v4AAAAJ&hl=en&url=https%3A%2F%2Fscholar.google.com%2Fcitations&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a> -->
-		<p class="text">Last updated: March, 2025.<br>The style of this website is borrowed from <a href='https://leoyuan.site/' target="_blank">Zeqing Yuan's</a>.</p>
+		<p class="text">Last updated: Aug, 2025.<br>The style of this website is borrowed from <a href='https://leoyuan.site/' target="_blank">Zeqing Yuan's</a>.</p>
 	</div>
   </div>
   </div>
