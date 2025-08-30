@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Wenli ZHAO</title>
+  <meta name="description" lang="en" content="Personal academic site of Wenli Zhao">
+  <meta name="keywords" lang="en" content="Wenli Zhao, ecohydrology, evapotranspiration, remote sensing, machine learning, Columbia University, MPI-BGC">
+
+  <!-- favicon 可换成你的头像小图 -->
+  <link rel="shortcut icon" href="images/J.jpeg">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/academicons.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="js/jquery-2.1.3.min.js"></script>
+
+  <script type="text/javascript">
+    function ShowHide(divId, linkDivId) {
+      if (document.getElementById(divId).style.display == 'none') {
+        document.getElementById(divId).style.display = 'block';
+        document.getElementById(linkDivId).style.display = 'none';
+      } else {
+        document.getElementById(divId).style.display = 'none';
+      }
+    }
+  </script>
+
+  <style>
+    /* 列表日期对齐的小样式（可保留） */
+    li.indented { position: relative; padding-left: 90px; }
+    li.indented::before { content: attr(data-date); position: absolute; left: 0; top: 0; white-space: nowrap; }
+
+    /* 学术服务两列排版 */
+    .reviewer-section { display: flex; flex-wrap: wrap; margin-top: 8px; }
+    .reviewer-column { flex: 1 1 50%; box-sizing: border-box; padding-right: 20px; font-size: 0.95em; line-height: 1.6; position: relative; padding-left: 1em; margin-bottom: 4px; }
+    .reviewer-column::before { content: "•"; position: absolute; left: 0; color: #555; }
+    @media (max-width: 600px) { .reviewer-column { flex: 1 1 100%; } }
+    .reviewer-title { margin-top: 12px; font-weight: bold; }
+
+    /* GitHub 卡片（如暂未使用，可保留样式） */
+    .card-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .github-card { border: 1px solid #eee; border-radius: 8px; padding: 12px; background: #fff; }
+    .github-card .repo-link { text-decoration: none; }
+    .github-card .label { margin-left: 6px; font-size: 12px; color: #777; }
+    .github-card .description { margin-top: 8px; color: #333; }
+    .github-card .meta { margin-top: 10px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .github-card .meta svg { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; }
+    .github-card .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; margin-right: 6px; }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrapper">
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        <a class="page-link" href="#bio"><b>Biography</b></a>
+        <a class="page-link" href="#timeline"><b>Experiences</b></a>
+        <a class="page-link" href="#publications"><b>Publications</b></a>
+        <a class="page-link" href="#codebase"><b>GitHub</b></a>
+        <a class="page-link" href="#awards"><b>Honors & Awards</b></a>
+        <a class="page-link" href="#academicservices"><b>Academic Services</b></a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- 顶部名片 -->
+<div id="profile-cover" class="cover shallow-bg img-responsive">
+  <div id="profile-namecard" class="profile-wrapper wrapper-light">
+    <div id="my-pic" class="profile-col profile-col-1">
+      <!-- 头像：请把你的照片放到 images/myself.jpg，或改 src 为你的路径 -->
+      <img id="profile-avatar" src="images/myself.jpg" alt="Wenli Zhao" class="circle-img border-dark"/>
+    </div>
+    <div id="my-contact" class="profile-col profile-col-2">
+      <div id="my-name" class="text-grey-dark">Wenli ZHAO<br></div>
+      <div id="my-title" class="text-grey">Postdoctoral Research Scientist, Columbia University</div>
+      <div id="my-email" class="text-grey-light">wz2481 [at] columbia.edu</div>
+    </div>
+
+    <div class="social-media">
+      <!-- 若有 Google Scholar 主页，把 # 换成你的链接并取消注释 -->
+      <!-- <a href="https://scholar.google.com/..." target="_blank" class="icon-button linkedin">
+        <i class="ai ai-google-scholar-square icon-linkedin"></i><span></span>
+      </a> -->
+      <!-- GitHub：有账号可打开并替换用户名 -->
+      <!-- <a href="https://github.com/<your_github>" target="_blank" class="icon-button github">
+        <i class="fa fa-github icon-github"></i><span></span>
+      </a> -->
+      <a href="mailto:wz2481@columbia.edu" target="_blank" class="icon-button linkedin">
+        <i class="fa fa-envelope icon-linkedin"></i><span></span>
+      </a>
+      <!-- 简历 PDF：把文件放入 work/ 后取消注释 -->
+      <!-- <a href="work/CV_Wenli_Zhao.pdf" target="_blank" class="icon-button github">
+        <i class="ai ai-cv icon-github"></i><span></span>
+      </a> -->
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="wrapper">
+
+    <!-- About & Interests & Education -->
+    <div id="bio" class="bio">
+      <h1 class="md-heading text-left"><i class="fa fa-id-card" aria-hidden="true"></i> About</h1>
+      <div class="bio-body" style="overflow:hidden;">
+        <p>
+          I am a Postdoctoral Research Scientist at Columbia University (New York, USA).
+          My research lies at the intersection of ecohydrology and data-driven Earth system science,
+          focusing on evapotranspiration, water resources, extreme events, and hybrid physics–ML modeling.
+          I previously held a postdoctoral position at the Max Planck Institute for Biogeochemistry and received
+          my Ph.D. in Environmental Science from Peking University.
+          Feel free to reach me by <a href="mailto:wz2481@columbia.edu" target="_blank">email</a>.
+        </p>
+
+        <div style="width: 50%; float:left">
+          <h3><i class="fa fa-star" aria-hidden="true"></i> <strong>Interests</strong></h3>
+          <ul>
+            <li><b>Ecohydrology; Evapotranspiration</b></li>
+            <li><b>Urban Heat Island; Water resources management</b></li>
+            <li><b>Flood/SWE prediction & forecast; Extreme events</b></li>
+            <li><b>Remote sensing; Machine learning</b></li>
+            <li><b>Hybrid modeling (Physics + ML)</b></li>
+            <li><b>Carbon emissions accounting & neutrality policy</b></li>
+          </ul>
+        </div>
+
+        <div style="width: 50%; float:right">
+          <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i><strong>Education</strong></h3>
+          <b>Peking University</b>
+          <ul><li>Ph.D. in Environmental Science</li></ul>
+          <b>Northeast Normal University</b>
+          <ul><li>B.E. in Geographical Information System</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline / Experiences -->
+    <div id="timeline" class="timeline-brief">
+      <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Experiences</h1>
+      <div class="timeline-body">
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <!-- 若准备单位小图标，可放 images/columbia.png -->
+            <!-- <img class="social-icon" src="images/columbia.png"/> -->
+            Sep, 2023 – Now
+          </div>
+          <div class="timeline-title">Postdoctoral Research Scientist @ Columbia University, New York, USA</div>
+          <div class="timeline-desc"><div class="timeline-host">Supervisor: Prof. Pierre Gentine</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <!-- <img class="social-icon" src="images/mpibgc.png"/> -->
+            Apr, 2022 – Sep, 2023
+          </div>
+          <div class="timeline-title">Postdoctoral Research Scientist @ Max Planck Institute for Biogeochemistry, Germany</div>
+          <div class="timeline-desc"><div class="timeline-host">Supervisors: Prof. Markus Reichstein &amp; Dr. Alexander Winkler</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <!-- <img class="social-icon" src="images/columbia.png"/> -->
+            Sep, 2020 – Apr, 2022
+          </div>
+          <div class="timeline-title">Postdoctoral Research Scientist @ Columbia University, New York, USA</div>
+          <div class="timeline-desc"><div class="timeline-host">Supervisor: Prof. Pierre Gentine</div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Publications：暂保留模板结构，等你后续填自己的论文 -->
+    <div id="publications" class="publications">
+      <h1 class="md-heading text-left">
+        <i class="fa fa-file" aria-hidden="true"></i>
+        Publications (<button class="custom-button" id="show-selected-btn"> Show Representative </button> / <button class="custom-button" id="show-all-btn"> Show All </button>)
+      </h1>
+
+      <div class="pub-list">
+        <!-- 示例：占位条目（可逐条替换为你的论文卡片；未准备好也可以暂时删除这整个 pub-list） -->
+        <div class="pub" data-selected="true" style="border:1px dashed #ddd; padding:10px;">
+          <div class="pub-right">
+            <div class="title">Coming soon</div>
+            <div class="authors"><font style="font-size: 11pt;">Your selected publications will appear here.</font></div>
+            <div class="publish"><span class="place">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub：如暂时不展示，可保留空容器 -->
+    <div class="wrapper">
+      <div id="codebase" class="bio">
+        <div class="bio-body" style="overflow:hidden;">
+          <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> GitHub</h1>
+          <div class="card-container">
+            <!-- 可添加你的项目卡片；目前留空 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Honors & Awards -->
+    <div class="wrapper">
+      <div id="awards" class="bio">
+        <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Selected Honors & Awards</h1>
+        <ul>
+          <li>Seal of Excellence Postdoctoral Proposal, Marie Curie Foundation, 2022</li>
+          <li>First-class Postgraduate Scholarship, Peking University, 2015–2018 (multiple years)</li>
+          <li>Learning Excellence Award, Peking University, 2016–2017</li>
+          <li>“Challenge Cup” Peking University Scientific Research Competition – Special Award, 2015–2016</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Academic Services -->
+    <div class="wrapper">
+      <div id="academicservices" class="bio">
+        <div class="bio-body" style="overflow:hidden;">
+          <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Academic Services</h1>
+
+          <div class="reviewer-title">Editorial Board:</div>
+          <div class="reviewer-section">
+            <div class="reviewer-column">Journal of Chinese Geographical Science (2024–present)</div>
+          </div>
+
+          <div class="reviewer-title">Journal Reviewer (selected):</div>
+          <div class="reviewer-section">
+            <div class="reviewer-column">Nature Geoscience; Water Resources Research; Hydrology and Earth System Sciences (HESS); Agricultural and Forest Meteorology</div>
+            <div class="reviewer-column">Geophysical Research Letters; Journal of Hydrology; Geoscientific Model Development; JAMES; JGR-Biogeosciences</div>
+            <div class="reviewer-column">Remote Sensing; Hydrological Sciences Journal; Frontiers in Plant Science; etc.</div>
+          </div>
+
+          <div class="reviewer-title">Community:</div>
+          <div class="reviewer-section">
+            <div class="reviewer-column">OSPP Awards judge, EGU 2023</div>
+            <div class="reviewer-column">Session Chair (AGU 2024): Modeling and Untangling Climate–Hydrology–Ecology Interactions Through Extreme Events</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.wrapper -->
+</div><!-- /.page-content -->
+
+<!-- 访问计数器：可保留/移除 -->
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div style="max-width: 400px; width: 100%;">
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=K9NLvpbM7GH1cTCvhvVlo4LW5p-d2mRZYw6UhrAFw0g&cl=ffffff&w=a"></script>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Personal Email:</li>
+          <li><a href="mailto:wz2481@columbia.edu">wz2481 [at] columbia.edu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <!-- 若有学者/社媒链接可添加 -->
+        <!-- <a href="https://scholar.google.com/..." target="_blank" class="icon-button github"><i class="ai ai-google-scholar-square icon-github"></i><span></span></a> -->
+        <!-- <a href="https://github.com/<your_github>" target="_blank" class="icon-button github"><i class="fa fa-github icon-github"></i><span></span></a> -->
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p class="text">Last updated: Aug, 2025.<br>Template adapted from an open-source academic theme.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top">Top</div>
+
+<!-- Back-to-top 按钮 -->
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function () {
+      if (jQuery(this).scrollTop() > offset) {
+        jQuery('.back-to-top').fadeIn(duration);
+      } else {
+        jQuery('.back-to-top').fadeOut(duration);
+      }
+    });
+    jQuery('.back-to-top').click(function (event) {
+      event.preventDefault();
+      jQuery('html, body').animate({ scrollTop: 0 }, duration);
+      return false;
+    });
+  });
+</script>
+
+<!-- Publications 的筛选按钮逻辑（保留原功能） -->
+<script>
+  const showSelectedBtn = document.getElementById('show-selected-btn');
+  const showAllBtn = document.getElementById('show-all-btn');
+  const publications = document.querySelectorAll('.pub');
+
+  if (showSelectedBtn && showAllBtn) {
+    showSelectedBtn.addEventListener('click', function () {
+      publications.forEach(pub => {
+        if (pub.getAttribute('data-selected') === 'true') {
+          pub.style.display = 'block';
+        } else {
+          pub.style.display = 'none';
+        }
+      });
+    });
+
+    showAllBtn.addEventListener('click', function () {
+      publications.forEach(pub => { pub.style.display = 'block'; });
+    });
+  }
+</script>
+
+</body>
+</html>
