@@ -37,7 +37,6 @@
     .github-card .meta svg { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; }
     .github-card .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; margin-right: 6px; }
 
-    /* publications list */
     .pub-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
     .pub { border: 1px solid #e9e9e9; border-radius: 8px; padding: 12px 14px; background: #fff; }
     .pub .title { font-weight: 600; line-height: 1.3; }
@@ -46,10 +45,8 @@
     .pub .links { margin-top: 6px; }
     .pub .links a { margin-right: 10px; text-decoration: none; border-bottom: 1px dotted #888; }
 
-    /* back to top */
     .back-to-top { display:none; position: fixed; bottom: 20px; right: 20px; background:#333; color:#fff; padding:8px 10px; border-radius: 6px; cursor:pointer; font-size: 12px; }
 
-    /* clickable map wrapper */
     .map-wrap { position: relative; max-width: 420px; margin: 0 auto; }
     .map-overlay-link { position:absolute; inset:0; display:block; }
     .map-caption { text-align:center; font-size:12px; color:#666; margin-top:6px; }
@@ -95,7 +92,6 @@
       <a href="mailto:wz2481@columbia.edu" target="_blank" class="icon-button linkedin">
         <i class="fa fa-envelope icon-linkedin"></i><span></span>
       </a>
-      <!-- <a href="work/CV_Wenli_Zhao.pdf" target="_blank" class="icon-button github"><i class="ai ai-cv icon-github"></i><span></span></a> -->
     </div>
   </div>
 </div>
@@ -177,10 +173,20 @@
       </h1>
       <p style="font-size:0.9em; color:#555; margin-top:-6px; margin-bottom:12px;">
         (Published, in revision and under review)<br>
-        <b>#</b> for Co-first author; <b>*</b> for Corresponding author; <b>*&dagger;</b> for Corresponding author (as Advisor or co-Advisor)
+        <b>#</b> for Co-first author; <b>*</b> for Corresponding author (as Advisor or co-Advisor)
       </p>
 
       <div class="pub-list">
+
+        <!-- Representative: Energy (2025) under review -->
+        <div class="pub" data-selected="true">
+          <div class="title">Unveiling the carbon emission mechanism of the global power system under extreme weather: Country-specific insights through explainable machine learning</div>
+          <div class="authors">Ning, X.; <b>Zhao, W.*</b>; et al.</div>
+          <div class="publish">Energy, 2025. (under review)</div>
+          <div class="links">
+            <a target="_blank" href="https://dx.doi.org/10.2139/ssrn.5405302">Preprint</a>
+          </div>
+        </div>
 
         <!-- Representative: Shi & Zhao preprint – NO journal name -->
         <div class="pub" data-selected="true">
@@ -240,25 +246,6 @@
           <div class="authors"><b>Zhao, W.*</b>; Gentine, P.; Reichstein, M.; et al.</div>
           <div class="publish">Geophysical Research Letters 46, 14496–14507, 2019. (ESI Highly Cited Paper)</div>
         </div>
-
-        <!-- Not Representative: new Energy paper -->
-        <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">Unveiling the carbon emission mechanism of the global power system under extreme weather: Country-specific insights through explainable machine learning</div>
-          <div class="authors">Ning, X.; <b>Zhao, W.*</b>; et al.</div>
-          <div class="publish">Energy, 2025. (under review)</div>
-          <div class="links">
-            <a target="_blank" href="https://dx.doi.org/10.2139/ssrn.5405302">Preprint</a>
-          </div>
-        </div>
-
-        <!-- 示例：若作为导师/共同导师的通讯作者，用 *† -->
-        <!--
-        <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">[Student paper title]</div>
-          <div class="authors">Student, A.; Student, B.; <b>Zhao, W.*&dagger;</b></div>
-          <div class="publish">Journal, 2025. (in revision)</div>
-        </div>
-        -->
 
       </div>
     </div>
@@ -320,7 +307,6 @@
 
 <!-- Visitor map (clickable) -->
 <div class="map-wrap">
-  <!-- 点击整个地图区域，会在新标签打开 ClustrMaps 主页（便于查看详情/交互） -->
   <a class="map-overlay-link" href="https://clustrmaps.com" target="_blank" title="Open visitor map in a new tab"></a>
   <div>
     <script type="text/javascript" id="clustrmaps"
