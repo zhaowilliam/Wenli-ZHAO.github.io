@@ -152,9 +152,9 @@
     <!-- Publications -->
     <div id="publications" class="publications">
       <h1 class="md-heading text-left">
-        <i class="fa fa-file" aria-hidden="true"></i>
+        <i class="fa fa-file"></i>
         Publications
-        (<button class="custom-button" id="show-selected-btn" type="button">Show Representative</button>)
+        (<button class="custom-button" id="show-selected-btn" type="button" aria-pressed="false">Show Representative</button>)
       </h1>
       <p style="font-size:.9em;color:#555;margin-top:-6px;margin-bottom:12px;">
         (Published, in revision and under review)<br>
@@ -318,18 +318,36 @@
     });
   })();
 
-  // Publications: 仅“Show Representative”
+  // Publications toggle
   window.addEventListener('DOMContentLoaded', function () {
     var pubs = [].slice.call(document.querySelectorAll('.pub'));
     var repBtn = document.getElementById('show-selected-btn');
-    function showRep(){
-      pubs.forEach(function(p){
+    var repsVisible = false;
+
+    function showSelected() {
+      pubs.forEach(function (p) {
         p.style.display = (p.getAttribute('data-selected') === 'true') ? 'block' : 'none';
       });
-      repBtn && repBtn.classList.add('active');
     }
-    if(repBtn){ repBtn.addEventListener('click', showRep); }
-    // 初始保持隐藏
+    function hideAll() {
+      pubs.forEach(function (p) { p.style.display = 'none'; });
+    }
+    function toggleRep() {
+      if (!repsVisible) {
+        showSelected();
+        repsVisible = true;
+        repBtn.classList.add('active');
+        repBtn.setAttribute('aria-pressed', 'true');
+        repBtn.textContent = 'Hide Representative';
+      } else {
+        hideAll();
+        repsVisible = false;
+        repBtn.classList.remove('active');
+        repBtn.setAttribute('aria-pressed', 'false');
+        repBtn.textContent = 'Show Representative';
+      }
+    }
+    repBtn.addEventListener('click', toggleRep);
   });
 </script>
 </body>
