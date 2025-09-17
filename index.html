@@ -5,21 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Wenli ZHAO</title>
   <meta name="description" lang="en" content="Personal academic site of Wenli Zhao">
   <meta name="keywords" lang="en" content="Wenli Zhao, ecohydrology, evapotranspiration, remote sensing, machine learning, Columbia University, MPI-BGC">
-
-  <!-- favicon 可换成你的头像小图 -->
   <link rel="shortcut icon" href="images/J.jpeg">
-
-  <!-- styles -->
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/academicons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
   <script src="js/jquery-2.1.3.min.js"></script>
 
   <script type="text/javascript">
@@ -34,18 +28,15 @@
   </script>
 
   <style>
-    /* 列表日期对齐的小样式（可保留） */
     li.indented { position: relative; padding-left: 90px; }
     li.indented::before { content: attr(data-date); position: absolute; left: 0; top: 0; white-space: nowrap; }
 
-    /* 学术服务两列排版 */
     .reviewer-section { display: flex; flex-wrap: wrap; margin-top: 8px; }
     .reviewer-column { flex: 1 1 50%; box-sizing: border-box; padding-right: 20px; font-size: 0.95em; line-height: 1.6; position: relative; padding-left: 1em; margin-bottom: 4px; }
     .reviewer-column::before { content: "•"; position: absolute; left: 0; color: #555; }
     @media (max-width: 600px) { .reviewer-column { flex: 1 1 100%; } }
     .reviewer-title { margin-top: 12px; font-weight: bold; }
 
-    /* GitHub 卡片（如暂未使用，可保留样式） */
     .card-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
     .github-card { border: 1px solid #eee; border-radius: 8px; padding: 12px; background: #fff; }
     .github-card .repo-link { text-decoration: none; }
@@ -54,6 +45,15 @@
     .github-card .meta { margin-top: 10px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .github-card .meta svg { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; }
     .github-card .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; margin-right: 6px; }
+
+    /* 简单的论文卡片排版 */
+    .pub-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .pub { padding: 12px 14px; border: 1px solid #eee; border-radius: 8px; background: #fff; }
+    .pub .title { font-weight: 600; }
+    .pub .authors { margin: 4px 0; }
+    .pub .publish { font-style: italic; }
+    .pub .links a { margin-right: 10px; text-decoration: none; }
+    .custom-button { cursor: pointer; padding: 2px 8px; border: 1px solid #bbb; border-radius: 6px; background: #fafafa; }
   </style>
 </head>
 
@@ -84,7 +84,6 @@
 <div id="profile-cover" class="cover shallow-bg img-responsive">
   <div id="profile-namecard" class="profile-wrapper wrapper-light">
     <div id="my-pic" class="profile-col profile-col-1">
-      <!-- 头像：请把你的照片放到 images/myself.jpg，或改 src 为你的路径 -->
       <img id="profile-avatar" src="images/myself.jpg" alt="Wenli Zhao" class="circle-img border-dark"/>
     </div>
     <div id="my-contact" class="profile-col profile-col-2">
@@ -94,21 +93,9 @@
     </div>
 
     <div class="social-media">
-      <!-- 若有 Google Scholar 主页，把 # 换成你的链接并取消注释 -->
-      <!-- <a href="https://scholar.google.com/..." target="_blank" class="icon-button linkedin">
-        <i class="ai ai-google-scholar-square icon-linkedin"></i><span></span>
-      </a> -->
-      <!-- GitHub：有账号可打开并替换用户名 -->
-      <!-- <a href="https://github.com/<your_github>" target="_blank" class="icon-button github">
-        <i class="fa fa-github icon-github"></i><span></span>
-      </a> -->
       <a href="mailto:wz2481@columbia.edu" target="_blank" class="icon-button linkedin">
         <i class="fa fa-envelope icon-linkedin"></i><span></span>
       </a>
-      <!-- 简历 PDF：把文件放入 work/ 后取消注释 -->
-      <!-- <a href="work/CV_Wenli_Zhao.pdf" target="_blank" class="icon-button github">
-        <i class="ai ai-cv icon-github"></i><span></span>
-      </a> -->
     </div>
   </div>
 </div>
@@ -116,7 +103,7 @@
 <div class="page-content">
   <div class="wrapper">
 
-    <!-- About & Interests & Education -->
+    <!-- About -->
     <div id="bio" class="bio">
       <h1 class="md-heading text-left"><i class="fa fa-id-card" aria-hidden="true"></i> About</h1>
       <div class="bio-body" style="overflow:hidden;">
@@ -151,38 +138,30 @@
       </div>
     </div>
 
-    <!-- Timeline / Experiences -->
+    <!-- Timeline -->
     <div id="timeline" class="timeline-brief">
       <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Experiences</h1>
       <div class="timeline-body">
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            2025 – Now
-          </div>
+          <div class="timeline-date">2025 – Now</div>
           <div class="timeline-title">Associate Research Scientist @ Columbia University, New York, USA</div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            Sep, 2023 – 2025
-          </div>
+          <div class="timeline-date">Sep, 2023 – 2025</div>
           <div class="timeline-title">Postdoctoral Research Scientist @ Columbia University, New York, USA</div>
           <div class="timeline-desc"><div class="timeline-host">Supervisor: Prof. Pierre Gentine</div></div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            Apr, 2022 – Sep, 2023
-          </div>
+          <div class="timeline-date">Apr, 2022 – Sep, 2023</div>
           <div class="timeline-title">Postdoctoral Research Scientist @ Max Planck Institute for Biogeochemistry, Germany</div>
           <div class="timeline-desc"><div class="timeline-host">Supervisors: Prof. Markus Reichstein &amp; Dr. Alexander Winkler</div></div>
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            Sep, 2020 – Apr, 2022
-          </div>
+          <div class="timeline-date">Sep, 2020 – Apr, 2022</div>
           <div class="timeline-title">Postdoctoral Research Scientist @ Columbia University, New York, USA</div>
           <div class="timeline-desc"><div class="timeline-host">Supervisor: Prof. Pierre Gentine</div></div>
         </div>
@@ -198,13 +177,105 @@
       </h1>
 
       <div class="pub-list">
-        <div class="pub" data-selected="true" style="border:1px dashed #ddd; padding:10px;">
-          <div class="pub-right">
-            <div class="title">Coming soon</div>
-            <div class="authors"><font style="font-size: 11pt;">Your selected publications will appear here.</font></div>
-            <div class="publish"><span class="place">—</span></div>
+
+        <!-- 代表作（与你的截图一致） -->
+        <div class="pub" data-selected="true">
+          <div class="title">A theoretical framework for critical canopy temperature and its potential to improve remote-sensing-based evapotranspiration estimation</div>
+          <div class="authors">Shi Z., <b>Zhao W.*</b>, et al.</div>
+          <div class="publish"><i>Remote Sensing of Environment</i>, 2025. (under review)</div>
+        </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">Observation-constrained physical snow water equivalent simulations using a physics-guided machine learning approach</div>
+          <div class="authors"><b>Zhao W.</b>, et al.</div>
+          <div class="publish"><i>Water Resources Research</i>, 2024. (under review)</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.22541/au.174923095.52912611/v1">Preprint</a>
           </div>
         </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">Learning evaporative fractions with memory</div>
+          <div class="authors"><b>Zhao W.</b>, et al.</div>
+          <div class="publish"><i>Hydrology and Earth System Sciences</i>, 2024. (under revision)</div>
+          <div class="links">
+            <a target="_blank" href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-365/">Preprint</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">A near-real-time daily European consumption power carbon intensity dataset (ECON-PowerCI): Expansion and application of CarbonMonitor-Power-Europe</div>
+          <div class="authors">Zhang S.<sup>#</sup>, <b>Zhao W.*</b><sup>#</sup>, et al.</div>
+          <div class="publish"><i>Scientific Data</i>, 2024. (accepted in principle)</div>
+        </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">Increased reliance on fossil energy during extreme events</div>
+          <div class="authors"><b>Zhao W.</b>, Zhu B., Davis S. J., Ciais P., et al.</div>
+          <div class="publish"><i>Communications Earth & Environment</i>, 2023.</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.1038/s43247-023-01147-z">DOI</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">Uncertainties caused by resistances in evapotranspiration estimation using high-density eddy covariance measurements</div>
+          <div class="authors"><b>Zhao W.</b>, Qiu G. Y., Xiong Y. J., Gentine P., Chen B. Y.</div>
+          <div class="publish"><i>Journal of Hydrometeorology</i> 21, 1349–1365 (2020).</div>
+        </div>
+
+        <div class="pub" data-selected="true">
+          <div class="title">Physics-constrained machine learning of evapotranspiration</div>
+          <div class="authors"><b>Zhao W.</b>, Gentine P., Reichstein M., et al.</div>
+          <div class="publish"><i>Geophysical Research Letters</i> 46, 14496–14507 (2019). <span>(ESI Highly Cited Paper)</span></div>
+        </div>
+
+        <!-- 其余论文（仅在 Show All 时显示） -->
+        <div class="pub" data-selected="false" style="display:none;">
+          <div class="title">Unveiling the carbon emission mechanism of the global power system under extreme weather: Country-specific insights through explainable machine learning</div>
+          <div class="authors">Ning X., <b>Zhao W.*</b>, et al.</div>
+          <div class="publish"><i>Energy</i>, 2025. (under review)</div>
+          <div class="links">
+            <a target="_blank" href="https://dx.doi.org/10.2139/ssrn.5405302">Preprint</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="false" style="display:none;">
+          <div class="title">Globally interconnected solar-wind system addresses future electricity demands</div>
+          <div class="authors">Jiang H., Yao L., Qin J., …, <b>Zhao W.</b>, …</div>
+          <div class="publish"><i>Nature Communications</i>, 2025.</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.1038/s41467-025-59879-9">DOI</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="false" style="display:none;">
+          <div class="title">Recent global decline in rainfall interception loss due to altered rainfall regimes</div>
+          <div class="authors">Lian X., <b>Zhao W.</b>, &amp; Gentine P.</div>
+          <div class="publish"><i>Nature Communications</i>, 2022.</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.1038/s41467-022-35414-y">DOI</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="false" style="display:none;">
+          <div class="title">CarbonMonitor-Power: near-real-time monitoring of global power generation on hourly to daily scales</div>
+          <div class="authors">Zhu B., Deng Z., Song X., <b>Zhao W.</b>, et al.</div>
+          <div class="publish"><i>Scientific Data</i>, 2023.</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.1038/s41597-023-02094-2">DOI</a>
+          </div>
+        </div>
+
+        <div class="pub" data-selected="false" style="display:none;">
+          <div class="title">A global terrestrial evapotranspiration product based on the three-temperature model with fewer input parameters and no calibration requirement</div>
+          <div class="authors">Yu L., Qiu G., Yan C., <b>Zhao W.</b>, et al.</div>
+          <div class="publish"><i>Earth System Science Data</i>, 2022.</div>
+          <div class="links">
+            <a target="_blank" href="https://doi.org/10.5194/essd-14-3673-2022">DOI</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -214,7 +285,7 @@
         <div class="bio-body" style="overflow:hidden;">
           <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> GitHub</h1>
           <div class="card-container">
-            <!-- 可添加你的项目卡片；目前留空 -->
+            <!-- projects -->
           </div>
         </div>
       </div>
@@ -281,13 +352,7 @@
           <li><a href="mailto:wz2481@columbia.edu">wz2481 [at] columbia.edu</a></li>
         </ul>
       </div>
-
-      <div class="footer-col  footer-col-2">
-        <!-- 若有学者/社媒链接可添加 -->
-        <!-- <a href="https://scholar.google.com/..." target="_blank" class="icon-button github"><i class="ai ai-google-scholar-square icon-github"></i><span></span></a> -->
-        <!-- <a href="https://github.com/<your_github>" target="_blank" class="icon-button github"><i class="fa fa-github icon-github"></i><span></span></a> -->
-      </div>
-
+      <div class="footer-col  footer-col-2"></div>
       <div class="footer-col footer-col-3">
         <p class="text">Last updated: Sep, 2025.<br>Template adapted from an open-source academic theme.</p>
       </div>
@@ -297,7 +362,6 @@
 
 <div class="back-to-top">Top</div>
 
-<!-- Back-to-top 按钮 -->
 <script type="text/javascript">
   jQuery(document).ready(function () {
     var offset = 220;
@@ -315,29 +379,24 @@
       return false;
     });
   });
-</script>
 
-<!-- Publications 的筛选按钮逻辑 -->
-<script>
+  // Publications 显示逻辑
   const showSelectedBtn = document.getElementById('show-selected-btn');
   const showAllBtn = document.getElementById('show-all-btn');
   const publications = document.querySelectorAll('.pub');
 
-  if (showSelectedBtn && showAllBtn) {
-    showSelectedBtn.addEventListener('click', function () {
-      publications.forEach(pub => {
-        if (pub.getAttribute('data-selected') === 'true') {
-          pub.style.display = 'block';
-        } else {
-          pub.style.display = 'none';
-        }
-      });
-    });
-
-    showAllBtn.addEventListener('click', function () {
-      publications.forEach(pub => { pub.style.display = 'block'; });
+  function updateView(showAll=false){
+    publications.forEach(pub => {
+      const isSelected = pub.getAttribute('data-selected') === 'true';
+      pub.style.display = (showAll || isSelected) ? 'block' : 'none';
     });
   }
+  if (showSelectedBtn && showAllBtn) {
+    showSelectedBtn.addEventListener('click', () => updateView(false));
+    showAllBtn.addEventListener('click', () => updateView(true));
+  }
+  // 默认仅显示代表作
+  updateView(false);
 </script>
 
 </body>
