@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wenli ZHAO</title>
-  <meta name="description" lang="en" content="Personal academic site of Wenli Zhao">
-  <meta name="keywords" lang="en" content="Wenli Zhao, ecohydrology, evapotranspiration, remote sensing, machine learning, Columbia University, MPI-BGC">
-  <link rel="shortcut icon" href="images/J.jpeg">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/academicons.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <script src="js/jquery-2.1.3.min.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script type="text/javascript">
-    function ShowHide(divId, linkDivId) {
-      if (document.getElementById(divId).style.display == 'none') {
-        document.getElementById(divId).style.display = 'block';
-        document.getElementById(linkDivId).style.display = 'none';
-      } else {
-        document.getElementById(divId).style.display = 'none';
-      }
-    }
-  </script>
+  <title>Wenli ZHAO</title>
+  <meta name="description" content="Personal academic site of Wenli Zhao" />
+  <meta name="keywords" content="Wenli Zhao, ecohydrology, evapotranspiration, remote sensing, machine learning, Columbia University, MPI-BGC" />
+
+  <link rel="shortcut icon" href="images/J.jpeg" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/academicons.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+  <script src="js/jquery-2.1.3.min.js"></script>
 
   <style>
     li.indented { position: relative; padding-left: 90px; }
@@ -46,14 +37,22 @@
     .github-card .meta svg { width: 16px; height: 16px; vertical-align: middle; margin-right: 4px; }
     .github-card .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; margin-right: 6px; }
 
-    /* 简单的论文卡片排版 */
+    /* publications list */
     .pub-list { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    .pub { padding: 12px 14px; border: 1px solid #eee; border-radius: 8px; background: #fff; }
-    .pub .title { font-weight: 600; }
-    .pub .authors { margin: 4px 0; }
-    .pub .publish { font-style: italic; }
-    .pub .links a { margin-right: 10px; text-decoration: none; }
-    .custom-button { cursor: pointer; padding: 2px 8px; border: 1px solid #bbb; border-radius: 6px; background: #fafafa; }
+    .pub { border: 1px solid #e9e9e9; border-radius: 8px; padding: 12px 14px; background: #fff; }
+    .pub .title { font-weight: 600; line-height: 1.3; }
+    .pub .authors { margin-top: 4px; color: #333; }
+    .pub .publish { margin-top: 4px; color: #666; font-size: 0.95em; }
+    .pub .links { margin-top: 6px; }
+    .pub .links a { margin-right: 10px; text-decoration: none; border-bottom: 1px dotted #888; }
+
+    /* back to top */
+    .back-to-top { display:none; position: fixed; bottom: 20px; right: 20px; background:#333; color:#fff; padding:8px 10px; border-radius: 6px; cursor:pointer; font-size: 12px; }
+
+    /* clickable map wrapper */
+    .map-wrap { position: relative; max-width: 420px; margin: 0 auto; }
+    .map-overlay-link { position:absolute; inset:0; display:block; }
+    .map-caption { text-align:center; font-size:12px; color:#666; margin-top:6px; }
   </style>
 </head>
 
@@ -80,7 +79,7 @@
   </div>
 </header>
 
-<!-- 顶部名片 -->
+<!-- Profile -->
 <div id="profile-cover" class="cover shallow-bg img-responsive">
   <div id="profile-namecard" class="profile-wrapper wrapper-light">
     <div id="my-pic" class="profile-col profile-col-1">
@@ -96,6 +95,7 @@
       <a href="mailto:wz2481@columbia.edu" target="_blank" class="icon-button linkedin">
         <i class="fa fa-envelope icon-linkedin"></i><span></span>
       </a>
+      <!-- <a href="work/CV_Wenli_Zhao.pdf" target="_blank" class="icon-button github"><i class="ai ai-cv icon-github"></i><span></span></a> -->
     </div>
   </div>
 </div>
@@ -105,7 +105,7 @@
 
     <!-- About -->
     <div id="bio" class="bio">
-      <h1 class="md-heading text-left"><i class="fa fa-id-card" aria-hidden="true"></i> About</h1>
+      <h1 class="md-heading text-left"><i class="fa fa-id-card"></i> About</h1>
       <div class="bio-body" style="overflow:hidden;">
         <p>
           I am an Associate Research Scientist at Columbia University (New York, USA).
@@ -117,7 +117,7 @@
         </p>
 
         <div style="width: 50%; float:left">
-          <h3><i class="fa fa-star" aria-hidden="true"></i> <strong>Interests</strong></h3>
+          <h3><i class="fa fa-star"></i> <strong>Interests</strong></h3>
           <ul>
             <li><b>Ecohydrology; Evapotranspiration</b></li>
             <li><b>Urban Heat Island; Water resources management</b></li>
@@ -129,7 +129,7 @@
         </div>
 
         <div style="width: 50%; float:right">
-          <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i><strong>Education</strong></h3>
+          <h3><i class="fa fa-graduation-cap"></i><strong>Education</strong></h3>
           <b>Peking University</b>
           <ul><li>Ph.D. in Environmental Science</li></ul>
           <b>Northeast Normal University</b>
@@ -138,11 +138,10 @@
       </div>
     </div>
 
-    <!-- Timeline -->
+    <!-- Experiences -->
     <div id="timeline" class="timeline-brief">
-      <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Experiences</h1>
+      <h1 class="md-heading text-left"><i class="fa fa-tasks"></i> Experiences</h1>
       <div class="timeline-body">
-
         <div class="timeline-item">
           <div class="timeline-date">2025 – Now</div>
           <div class="timeline-title">Associate Research Scientist @ Columbia University, New York, USA</div>
@@ -165,116 +164,101 @@
           <div class="timeline-title">Postdoctoral Research Scientist @ Columbia University, New York, USA</div>
           <div class="timeline-desc"><div class="timeline-host">Supervisor: Prof. Pierre Gentine</div></div>
         </div>
-
       </div>
     </div>
 
     <!-- Publications -->
     <div id="publications" class="publications">
       <h1 class="md-heading text-left">
-        <i class="fa fa-file" aria-hidden="true"></i>
-        Publications (<button class="custom-button" id="show-selected-btn"> Show Representative </button> / <button class="custom-button" id="show-all-btn"> Show All </button>)
+        <i class="fa fa-file"></i>
+        Publications
+        (<button class="custom-button" id="show-selected-btn"> Show Representative </button> /
+         <button class="custom-button" id="show-all-btn"> Show All </button>)
       </h1>
+      <p style="font-size:0.9em; color:#555; margin-top:-6px; margin-bottom:12px;">
+        (Published, in revision and under review)<br>
+        <b>#</b> for Co-first author; <b>*</b> for Corresponding author; <b>*&dagger;</b> for Corresponding author (as Advisor or co-Advisor)
+      </p>
 
       <div class="pub-list">
 
-        <!-- 代表作（与你的截图一致） -->
+        <!-- Representative: Shi & Zhao preprint – NO journal name -->
         <div class="pub" data-selected="true">
-          <div class="title">A theoretical framework for critical canopy temperature and its potential to improve remote-sensing-based evapotranspiration estimation</div>
-          <div class="authors">Shi Z., <b>Zhao W.*</b>, et al.</div>
-          <div class="publish"><i>Remote Sensing of Environment</i>, 2025. (under review)</div>
+          <div class="title">A Theoretical Framework for Critical Canopy Temperature and its Potential to Improve Remote-Sensing-Based Estimation of Evapotranspiration</div>
+          <div class="authors">Shi, Z.; <b>Zhao, W.*</b>; Xiong, Y.; Xu, L.; Fang, J.; Jiang, S.; Yan, C.; Winkler, A. J.; Qiu, G. Y.</div>
+          <div class="publish">2025. (under review)</div>
+          <div class="links">
+            <a target="_blank" href="https://ssrn.com/abstract=5190063">SSRN</a>
+            <a target="_blank" href="http://dx.doi.org/10.2139/ssrn.5190063">DOI</a>
+          </div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">Observation-constrained physical snow water equivalent simulations using a physics-guided machine learning approach</div>
-          <div class="authors"><b>Zhao W.</b>, et al.</div>
-          <div class="publish"><i>Water Resources Research</i>, 2024. (under review)</div>
+          <div class="authors"><b>Zhao, W.*</b>; et al.</div>
+          <div class="publish">Water Resources Research, 2024. (under review)</div>
           <div class="links">
             <a target="_blank" href="https://doi.org/10.22541/au.174923095.52912611/v1">Preprint</a>
           </div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">Learning evaporative fractions with memory</div>
-          <div class="authors"><b>Zhao W.</b>, et al.</div>
-          <div class="publish"><i>Hydrology and Earth System Sciences</i>, 2024. (under revision)</div>
+          <div class="authors"><b>Zhao, W.*</b>; et al.</div>
+          <div class="publish">Hydrology and Earth System Sciences, 2024. (under revision)</div>
           <div class="links">
             <a target="_blank" href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-365/">Preprint</a>
           </div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">A near-real-time daily European consumption power carbon intensity dataset (ECON-PowerCI): Expansion and application of CarbonMonitor-Power-Europe</div>
-          <div class="authors">Zhang S.<sup>#</sup>, <b>Zhao W.*</b><sup>#</sup>, et al.</div>
-          <div class="publish"><i>Scientific Data</i>, 2024. (accepted in principle)</div>
+          <div class="authors">Zhang, S.<b>#</b>; <b>Zhao, W.*#</b>; et al.</div>
+          <div class="publish">Scientific Data, 2024. (accepted in principle)</div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">Increased reliance on fossil energy during extreme events</div>
-          <div class="authors"><b>Zhao W.</b>, Zhu B., Davis S. J., Ciais P., et al.</div>
-          <div class="publish"><i>Communications Earth & Environment</i>, 2023.</div>
-          <div class="links">
-            <a target="_blank" href="https://doi.org/10.1038/s43247-023-01147-z">DOI</a>
-          </div>
+          <div class="authors"><b>Zhao, W.*</b>; Zhu, B.; Davis, S. J.; Ciais, P.; et al.</div>
+          <div class="publish">Communications Earth &amp; Environment, 2023. <a target="_blank" href="https://doi.org/10.1038/s43247-023-01147-z">DOI</a></div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">Uncertainties caused by resistances in evapotranspiration estimation using high-density eddy covariance measurements</div>
-          <div class="authors"><b>Zhao W.</b>, Qiu G. Y., Xiong Y. J., Gentine P., Chen B. Y.</div>
-          <div class="publish"><i>Journal of Hydrometeorology</i> 21, 1349–1365 (2020).</div>
+          <div class="authors"><b>Zhao, W.*</b>; Qiu, G. Y.; Xiong, Y. J.; Gentine, P.; Chen, B. Y.</div>
+          <div class="publish">Journal of Hydrometeorology 21, 1349–1365, 2020.</div>
         </div>
 
+        <!-- Representative -->
         <div class="pub" data-selected="true">
           <div class="title">Physics-constrained machine learning of evapotranspiration</div>
-          <div class="authors"><b>Zhao W.</b>, Gentine P., Reichstein M., et al.</div>
-          <div class="publish"><i>Geophysical Research Letters</i> 46, 14496–14507 (2019). <span>(ESI Highly Cited Paper)</span></div>
+          <div class="authors"><b>Zhao, W.*</b>; Gentine, P.; Reichstein, M.; et al.</div>
+          <div class="publish">Geophysical Research Letters 46, 14496–14507, 2019. (ESI Highly Cited Paper)</div>
         </div>
 
-        <!-- 其余论文（仅在 Show All 时显示） -->
+        <!-- Not Representative: new Energy paper -->
         <div class="pub" data-selected="false" style="display:none;">
           <div class="title">Unveiling the carbon emission mechanism of the global power system under extreme weather: Country-specific insights through explainable machine learning</div>
-          <div class="authors">Ning X., <b>Zhao W.*</b>, et al.</div>
-          <div class="publish"><i>Energy</i>, 2025. (under review)</div>
+          <div class="authors">Ning, X.; <b>Zhao, W.*</b>; et al.</div>
+          <div class="publish">Energy, 2025. (under review)</div>
           <div class="links">
             <a target="_blank" href="https://dx.doi.org/10.2139/ssrn.5405302">Preprint</a>
           </div>
         </div>
 
+        <!-- 示例：若作为导师/共同导师的通讯作者，用 *† -->
+        <!--
         <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">Globally interconnected solar-wind system addresses future electricity demands</div>
-          <div class="authors">Jiang H., Yao L., Qin J., …, <b>Zhao W.</b>, …</div>
-          <div class="publish"><i>Nature Communications</i>, 2025.</div>
-          <div class="links">
-            <a target="_blank" href="https://doi.org/10.1038/s41467-025-59879-9">DOI</a>
-          </div>
+          <div class="title">[Student paper title]</div>
+          <div class="authors">Student, A.; Student, B.; <b>Zhao, W.*&dagger;</b></div>
+          <div class="publish">Journal, 2025. (in revision)</div>
         </div>
-
-        <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">Recent global decline in rainfall interception loss due to altered rainfall regimes</div>
-          <div class="authors">Lian X., <b>Zhao W.</b>, &amp; Gentine P.</div>
-          <div class="publish"><i>Nature Communications</i>, 2022.</div>
-          <div class="links">
-            <a target="_blank" href="https://doi.org/10.1038/s41467-022-35414-y">DOI</a>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">CarbonMonitor-Power: near-real-time monitoring of global power generation on hourly to daily scales</div>
-          <div class="authors">Zhu B., Deng Z., Song X., <b>Zhao W.</b>, et al.</div>
-          <div class="publish"><i>Scientific Data</i>, 2023.</div>
-          <div class="links">
-            <a target="_blank" href="https://doi.org/10.1038/s41597-023-02094-2">DOI</a>
-          </div>
-        </div>
-
-        <div class="pub" data-selected="false" style="display:none;">
-          <div class="title">A global terrestrial evapotranspiration product based on the three-temperature model with fewer input parameters and no calibration requirement</div>
-          <div class="authors">Yu L., Qiu G., Yan C., <b>Zhao W.</b>, et al.</div>
-          <div class="publish"><i>Earth System Science Data</i>, 2022.</div>
-          <div class="links">
-            <a target="_blank" href="https://doi.org/10.5194/essd-14-3673-2022">DOI</a>
-          </div>
-        </div>
+        -->
 
       </div>
     </div>
@@ -283,9 +267,9 @@
     <div class="wrapper">
       <div id="codebase" class="bio">
         <div class="bio-body" style="overflow:hidden;">
-          <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> GitHub</h1>
+          <h1 class="md-heading text-left"><i class="fa fa-tasks"></i> GitHub</h1>
           <div class="card-container">
-            <!-- projects -->
+            <!-- add project cards here -->
           </div>
         </div>
       </div>
@@ -294,7 +278,7 @@
     <!-- Honors & Awards -->
     <div class="wrapper">
       <div id="awards" class="bio">
-        <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Selected Honors & Awards</h1>
+        <h1 class="md-heading text-left"><i class="fa fa-tasks"></i> Selected Honors & Awards</h1>
         <ul>
           <li>Seal of Excellence Postdoctoral Proposal, Marie Curie Foundation, 2022</li>
           <li>First-class Postgraduate Scholarship, Peking University, 2015–2018 (multiple years)</li>
@@ -308,7 +292,7 @@
     <div class="wrapper">
       <div id="academicservices" class="bio">
         <div class="bio-body" style="overflow:hidden;">
-          <h1 class="md-heading text-left"><i class="fa fa-tasks" aria-hidden="true"></i> Academic Services</h1>
+          <h1 class="md-heading text-left"><i class="fa fa-tasks"></i> Academic Services</h1>
 
           <div class="reviewer-title">Editorial Board:</div>
           <div class="reviewer-section">
@@ -317,8 +301,8 @@
 
           <div class="reviewer-title">Journal Reviewer (selected):</div>
           <div class="reviewer-section">
-            <div class="reviewer-column">Nature Geoscience; Water Resources Research; Hydrology and Earth System Sciences (HESS); Agricultural and Forest Meteorology</div>
-            <div class="reviewer-column">Geophysical Research Letters; Journal of Hydrology; Geoscientific Model Development; JAMES; JGR-Biogeosciences</div>
+            <div class="reviewer-column">Nature Geoscience; Water Resources Research; HESS; Agricultural and Forest Meteorology</div>
+            <div class="reviewer-column">Geophysical Research Letters; Journal of Hydrology; GMD; JAMES; JGR-Biogeosciences</div>
             <div class="reviewer-column">Remote Sensing; Hydrological Sciences Journal; Frontiers in Plant Science; etc.</div>
           </div>
 
@@ -334,25 +318,30 @@
   </div><!-- /.wrapper -->
 </div><!-- /.page-content -->
 
-<!-- 访问计数器 -->
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="max-width: 400px; width: 100%;">
-      <script type="text/javascript" id="clustrmaps" 
-        src="https://clustrmaps.com/map_v2.js?d=VAAL-ZkQd9u0GnmKxIG0x1uqKxyATC02eEhaM19IKZ06&cl=ffffff&w=a&v=20250830">
-      </script>
+<!-- Visitor map (clickable) -->
+<div class="map-wrap">
+  <!-- 点击整个地图区域，会在新标签打开 ClustrMaps 主页（便于查看详情/交互） -->
+  <a class="map-overlay-link" href="https://clustrmaps.com" target="_blank" title="Open visitor map in a new tab"></a>
+  <div>
+    <script type="text/javascript" id="clustrmaps"
+      src="https://clustrmaps.com/map_v2.js?d=VAAL-ZkQd9u0GnmKxIG0x1uqKxyATC02eEhaM19IKZ06&cl=ffffff&w=a&v=20250830">
+    </script>
   </div>
 </div>
+<div class="map-caption">Click the map to view details on ClustrMaps</div>
 
 <footer class="site-footer">
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
+      <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li>Personal Email:</li>
           <li><a href="mailto:wz2481@columbia.edu">wz2481 [at] columbia.edu</a></li>
         </ul>
       </div>
-      <div class="footer-col  footer-col-2"></div>
+
+      <div class="footer-col footer-col-2"></div>
+
       <div class="footer-col footer-col-3">
         <p class="text">Last updated: Sep, 2025.<br>Template adapted from an open-source academic theme.</p>
       </div>
@@ -362,41 +351,32 @@
 
 <div class="back-to-top">Top</div>
 
-<script type="text/javascript">
-  jQuery(document).ready(function () {
-    var offset = 220;
-    var duration = 500;
+<script>
+  // back to top
+  jQuery(function () {
+    var offset = 220, duration = 500;
     jQuery(window).scroll(function () {
-      if (jQuery(this).scrollTop() > offset) {
-        jQuery('.back-to-top').fadeIn(duration);
-      } else {
-        jQuery('.back-to-top').fadeOut(duration);
-      }
+      if (jQuery(this).scrollTop() > offset) jQuery('.back-to-top').fadeIn(duration);
+      else jQuery('.back-to-top').fadeOut(duration);
     });
-    jQuery('.back-to-top').click(function (event) {
-      event.preventDefault();
-      jQuery('html, body').animate({ scrollTop: 0 }, duration);
-      return false;
-    });
+    jQuery('.back-to-top').click(function (e) { e.preventDefault(); jQuery('html, body').animate({ scrollTop: 0 }, duration); });
   });
 
-  // Publications 显示逻辑
+  // publications filter
   const showSelectedBtn = document.getElementById('show-selected-btn');
   const showAllBtn = document.getElementById('show-all-btn');
   const publications = document.querySelectorAll('.pub');
 
-  function updateView(showAll=false){
-    publications.forEach(pub => {
-      const isSelected = pub.getAttribute('data-selected') === 'true';
-      pub.style.display = (showAll || isSelected) ? 'block' : 'none';
+  if (showSelectedBtn && showAllBtn) {
+    showSelectedBtn.addEventListener('click', function () {
+      publications.forEach(pub => {
+        pub.style.display = (pub.getAttribute('data-selected') === 'true') ? 'block' : 'none';
+      });
+    });
+    showAllBtn.addEventListener('click', function () {
+      publications.forEach(pub => { pub.style.display = 'block'; });
     });
   }
-  if (showSelectedBtn && showAllBtn) {
-    showSelectedBtn.addEventListener('click', () => updateView(false));
-    showAllBtn.addEventListener('click', () => updateView(true));
-  }
-  // 默认仅显示代表作
-  updateView(false);
 </script>
 
 </body>
